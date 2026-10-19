@@ -8,16 +8,16 @@
 ## Citation
 
 Source:
-[`DESCRIPTION`](https://github.com/econdataverse/r-uisapi/blob/v0.1.2/DESCRIPTION)
+[`DESCRIPTION`](https://github.com/econdataverse/r-uisapi/blob/main/DESCRIPTION)
 
 Scheuch C (2026). *uisapi: Access the UNESCO Institute for Statistics
-API*. R package version 0.1.2,
+API*. R package version 0.1.2.9000,
 <https://github.com/econdataverse/r-uisapi>.
 
     @Manual{,
       title = {uisapi: Access the UNESCO Institute for Statistics API},
       author = {Christoph Scheuch},
       year = {2026},
-      note = {R package version 0.1.2},
+      note = {R package version 0.1.2.9000},
       url = {https://github.com/econdataverse/r-uisapi},
     }
