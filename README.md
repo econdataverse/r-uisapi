@@ -86,17 +86,17 @@ You can get information about the available entities via:
 uis_get_entities()
 #> # A tibble: 462 × 4
 #>    entity_id entity_name          entity_type region_group
-#>    <chr>     <chr>                <chr>       <chr>
-#>  1 ABW       Aruba                NATIONAL    <NA>
-#>  2 AFG       Afghanistan          NATIONAL    <NA>
-#>  3 AGO       Angola               NATIONAL    <NA>
-#>  4 AIA       Anguilla             NATIONAL    <NA>
-#>  5 ALA       Åland Islands        NATIONAL    <NA>
-#>  6 ALB       Albania              NATIONAL    <NA>
-#>  7 AND       Andorra              NATIONAL    <NA>
-#>  8 ANT       Netherlands Antilles NATIONAL    <NA>
-#>  9 ARE       United Arab Emirates NATIONAL    <NA>
-#> 10 ARG       Argentina            NATIONAL    <NA>
+#>    <chr>     <chr>                <chr>       <chr>       
+#>  1 ABW       Aruba                NATIONAL    <NA>        
+#>  2 AFG       Afghanistan          NATIONAL    <NA>        
+#>  3 AGO       Angola               NATIONAL    <NA>        
+#>  4 AIA       Anguilla             NATIONAL    <NA>        
+#>  5 ALA       Åland Islands        NATIONAL    <NA>        
+#>  6 ALB       Albania              NATIONAL    <NA>        
+#>  7 AND       Andorra              NATIONAL    <NA>        
+#>  8 ANT       Netherlands Antilles NATIONAL    <NA>        
+#>  9 ARE       United Arab Emirates NATIONAL    <NA>        
+#> 10 ARG       Argentina            NATIONAL    <NA>        
 #> # ℹ 452 more rows
 ```
 
@@ -106,7 +106,7 @@ The list of available indicators can be retrieved via:
 uis_get_indicators()
 #> # A tibble: 5,063 × 7
 #>    indicator_id indicator_name     theme last_data_update last_data_update_des…¹
-#>    <chr>        <chr>              <chr> <date>           <chr>
+#>    <chr>        <chr>              <chr> <date>           <chr>                 
 #>  1 10           Official entrance… EDUC… 2026-02-09       February 2026 Data Re…
 #>  2 10403        Start month of th… EDUC… 2026-02-09       February 2026 Data Re…
 #>  3 10404        End month of the … EDUC… 2026-02-09       February 2026 Data Re…
@@ -127,8 +127,8 @@ The API supports versioning and you can retrieve all versions using:
 ``` r
 uis_get_versions()
 #> # A tibble: 15 × 4
-#>    version           publication_date    description                    theme
-#>    <chr>             <dttm>              <chr>                          <list>
+#>    version           publication_date    description                    theme   
+#>    <chr>             <dttm>              <chr>                          <list>  
 #>  1 20260507-91260335 2026-05-08 16:58:36 string                         <tibble>
 #>  2 20260311-78618c3e 2026-03-11 19:40:01 Updated release files with fi… <tibble>
 #>  3 20260224-aef8b145 2026-02-26 17:19:14 string                         <tibble>
@@ -152,8 +152,8 @@ the parameter `default_only`:
 ``` r
 uis_get_versions(default_only = TRUE)
 #> # A tibble: 1 × 4
-#>   version           publication_date    description theme
-#>   <chr>             <dttm>              <chr>       <list>
+#>   version           publication_date    description theme           
+#>   <chr>             <dttm>              <chr>       <list>          
 #> 1 20260507-91260335 2026-05-08 16:58:36 string      <tibble [4 × 3]>
 ```
 
@@ -167,19 +167,19 @@ can get a list of available files via:
 uis_bulk_files()
 #> # A tibble: 12 × 3
 #>    file_name                                     file_url last_updated_descrip…¹
-#>    <chr>                                         <chr>    <chr>
-#>  1 "SDG 4 Education - Global and Thematic Indic… https:/… February 2026
-#>  2 "Other Policy Relevant Indicators (OPRI)"     https:/… February 2026
-#>  3 " SDG 9.5 - Research and Development (R&D)"   https:/… February 2026
-#>  4 "Research and Development (R&D) – Other Poli… https:/… February 2026
-#>  5 "SDG 11.4 Protect the Worlds Cultural and Na… https:/… February 2026
-#>  6 "Demographic and Socio-economic Indicators"   https:/… February 2026
-#>  7 "Education Non Core Archive February 2020"    https:/… <NA>
-#>  8 "Research and Development (R&D) Archive Marc… https:/… <NA>
-#>  9 "Innovation Archive April 2017"               https:/… <NA>
-#> 10 "Cultural employment Archive June 2019"       https:/… <NA>
-#> 11 "Cultural trade Archive June 2021"            https:/… <NA>
-#> 12 "Feature Film Archive October 2024"           https:/… October 2024
+#>    <chr>                                         <chr>    <chr>                 
+#>  1 "SDG 4 Education - Global and Thematic Indic… https:/… February 2026         
+#>  2 "Other Policy Relevant Indicators (OPRI)"     https:/… February 2026         
+#>  3 " SDG 9.5 - Research and Development (R&D)"   https:/… February 2026         
+#>  4 "Research and Development (R&D) – Other Poli… https:/… February 2026         
+#>  5 "SDG 11.4 Protect the Worlds Cultural and Na… https:/… February 2026         
+#>  6 "Demographic and Socio-economic Indicators"   https:/… February 2026         
+#>  7 "Education Non Core Archive February 2020"    https:/… <NA>                  
+#>  8 "Research and Development (R&D) Archive Marc… https:/… <NA>                  
+#>  9 "Innovation Archive April 2017"               https:/… <NA>                  
+#> 10 "Cultural employment Archive June 2019"       https:/… <NA>                  
+#> 11 "Cultural trade Archive June 2021"            https:/… <NA>                  
+#> 12 "Feature Film Archive October 2024"           https:/… October 2024          
 #> # ℹ abbreviated name: ¹​last_updated_description
 ```
 

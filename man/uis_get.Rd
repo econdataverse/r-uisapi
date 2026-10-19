@@ -44,7 +44,7 @@ Retrieves data from the UNESCO Institute for Statistics (UIS) API for
 specified entities, indicators, and time periods.
 }
 \examples{
-\dontshow{if (curl::has_internet()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
+\dontshow{if (curl::has_internet()) withAutoprint(\{ # examplesIf}
 \donttest{
 # Get all data for a single indicator
 uis_get(
