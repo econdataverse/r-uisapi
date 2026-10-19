@@ -58,7 +58,7 @@ perform_request <- function(
     {
       resp <- req |>
         req_user_agent(
-          "uisapi R package (https://github.com/tidy-intelligence/r-uisapi)"
+          "uisapi R package (https://github.com/econdataverse/r-uisapi)"
         ) |>
         req_perform()
     },
