@@ -24,7 +24,7 @@ Retrieves information about the available versions of the UNESCO Institute
 for Statistics (UIS) API.
 }
 \examples{
-\dontshow{if (curl::has_internet()) (if (getRversion() >= "3.4") withAutoprint else force)(\{ # examplesIf}
+\dontshow{if (curl::has_internet()) withAutoprint(\{ # examplesIf}
 \donttest{
 uis_get_versions()
 }

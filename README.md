@@ -10,10 +10,10 @@ status](https://www.r-pkg.org/badges/version/uisapi)](https://cran.r-project.org
 [![CRAN
 downloads](https://cranlogs.r-pkg.org/badges/uisapi)](https://cran.r-project.org/package=uisapi)
 ![R CMD
-Check](https://github.com/tidy-intelligence/r-uisapi/actions/workflows/R-CMD-check.yaml/badge.svg)
-![Lint](https://github.com/tidy-intelligence/r-uisapi/actions/workflows/lint.yaml/badge.svg)
+Check](https://github.com/econdataverse/r-uisapi/actions/workflows/R-CMD-check.yaml/badge.svg)
+![Lint](https://github.com/econdataverse/r-uisapi/actions/workflows/lint.yaml/badge.svg)
 [![Codecov test
-coverage](https://codecov.io/gh/tidy-intelligence/r-uisapi/graph/badge.svg)](https://app.codecov.io/gh/tidy-intelligence/r-uisapi)
+coverage](https://codecov.io/gh/econdataverse/r-uisapi/graph/badge.svg)](https://app.codecov.io/gh/econdataverse/r-uisapi)
 <!-- badges: end -->
 
 Retrieve data from the [UNESCO Institute for Statistics (UIS)
@@ -44,7 +44,7 @@ You can install the development version of `uisapi` from GitHub with:
 
 ``` r
 # install.packages("pak")
-pak::pak("tidy-intelligence/r-uisapi")
+pak::pak("econdataverse/r-uisapi")
 ```
 
 ## Usage
@@ -104,20 +104,20 @@ The list of available indicators can be retrieved via:
 
 ``` r
 uis_get_indicators()
-#> # A tibble: 4,636 × 7
+#> # A tibble: 5,063 × 7
 #>    indicator_id indicator_name     theme last_data_update last_data_update_des…¹
 #>    <chr>        <chr>              <chr> <date>           <chr>                 
-#>  1 10           Official entrance… EDUC… 2025-09-17       September 2025 Data R…
-#>  2 10403        Start month of th… EDUC… 2025-09-17       September 2025 Data R…
-#>  3 10404        End month of the … EDUC… 2025-09-17       September 2025 Data R…
-#>  4 10405        Start of the acad… EDUC… 2025-09-17       September 2025 Data R…
-#>  5 10406        End of the academ… EDUC… 2025-09-17       September 2025 Data R…
-#>  6 13           Theoretical durat… EDUC… 2025-09-17       September 2025 Data R…
-#>  7 200101       Total population … DEMO… 2025-09-09       September 2025 Data R…
-#>  8 200144       Population aged 1… DEMO… 2025-09-09       September 2025 Data R…
-#>  9 200151       Population aged 6… DEMO… 2025-09-09       September 2025 Data R…
-#> 10 200343       Population aged 1… DEMO… 2025-09-09       September 2025 Data R…
-#> # ℹ 4,626 more rows
+#>  1 10           Official entrance… EDUC… 2026-02-09       February 2026 Data Re…
+#>  2 10403        Start month of th… EDUC… 2026-02-09       February 2026 Data Re…
+#>  3 10404        End month of the … EDUC… 2026-02-09       February 2026 Data Re…
+#>  4 10405        Start of the acad… EDUC… 2026-02-09       February 2026 Data Re…
+#>  5 10406        End of the academ… EDUC… 2026-02-09       February 2026 Data Re…
+#>  6 13           Theoretical durat… EDUC… 2026-02-09       February 2026 Data Re…
+#>  7 200101       Total population … DEMO… 2026-02-09       February 2026 Data Re…
+#>  8 200144       Population aged 1… DEMO… 2026-02-09       February 2026 Data Re…
+#>  9 200151       Population aged 6… DEMO… 2026-02-09       February 2026 Data Re…
+#> 10 200343       Population aged 1… DEMO… 2026-02-09       February 2026 Data Re…
+#> # ℹ 5,053 more rows
 #> # ℹ abbreviated name: ¹​last_data_update_description
 #> # ℹ 2 more variables: data_availability <list>, entity_types <list>
 ```
@@ -126,21 +126,24 @@ The API supports versioning and you can retrieve all versions using:
 
 ``` r
 uis_get_versions()
-#> # A tibble: 12 × 4
+#> # A tibble: 15 × 4
 #>    version           publication_date    description                    theme   
 #>    <chr>             <dttm>              <chr>                          <list>  
-#>  1 20251112-3e719d9a 2025-11-13 17:46:49 November 2025 SCCI Refresh     <tibble>
-#>  2 20250917-73f4b95c 2025-09-18 13:31:02 September 2025 Data Release    <tibble>
-#>  3 20250910-c4a5b1fe 2025-09-12 02:55:22 September 2025 release         <tibble>
-#>  4 20250416-f6707727 2025-04-16 14:45:45 Dropping data for Hong Kong c… <tibble>
-#>  5 20250325-6f032139 2025-03-25 23:19:35 Dropping indicators with valu… <tibble>
-#>  6 20250312-e714f4e9 2025-03-12 14:01:51 Dropping Moldova 2024 populat… <tibble>
-#>  7 20250225-2ae60fad 2025-02-27 15:29:19 February 2025 DR               <tibble>
-#>  8 20241121-61101499 2024-11-21 23:37:39 SCCI Data refresh – Nov 2024 … <tibble>
-#>  9 20241113-98786d81 2024-11-21 18:57:35 SCCI data refresh              <tibble>
-#> 10 20241030-9d4d089e 2024-10-30 17:28:00 Drop data for CIV on MYS for … <tibble>
-#> 11 20240913-b8ca1963 2024-09-15 14:44:07 Glossary Update                <tibble>
-#> 12 20240910-b5ad4d82 2024-09-11 06:15:13 September 2024 Data Release (… <tibble>
+#>  1 20260507-91260335 2026-05-08 16:58:36 string                         <tibble>
+#>  2 20260311-78618c3e 2026-03-11 19:40:01 Updated release files with fi… <tibble>
+#>  3 20260224-aef8b145 2026-02-26 17:19:14 string                         <tibble>
+#>  4 20251112-3e719d9a 2025-11-13 17:46:49 November 2025 SCCI Refresh     <tibble>
+#>  5 20250917-73f4b95c 2025-09-18 13:31:02 September 2025 Data Release    <tibble>
+#>  6 20250910-c4a5b1fe 2025-09-12 02:55:22 September 2025 release         <tibble>
+#>  7 20250416-f6707727 2025-04-16 14:45:45 Dropping data for Hong Kong c… <tibble>
+#>  8 20250325-6f032139 2025-03-25 23:19:35 Dropping indicators with valu… <tibble>
+#>  9 20250312-e714f4e9 2025-03-12 14:01:51 Dropping Moldova 2024 populat… <tibble>
+#> 10 20250225-2ae60fad 2025-02-27 15:29:19 February 2025 DR               <tibble>
+#> 11 20241121-61101499 2024-11-21 23:37:39 SCCI Data refresh – Nov 2024 … <tibble>
+#> 12 20241113-98786d81 2024-11-21 18:57:35 SCCI data refresh              <tibble>
+#> 13 20241030-9d4d089e 2024-10-30 17:28:00 Drop data for CIV on MYS for … <tibble>
+#> 14 20240913-b8ca1963 2024-09-15 14:44:07 Glossary Update                <tibble>
+#> 15 20240910-b5ad4d82 2024-09-11 06:15:13 September 2024 Data Release (… <tibble>
 ```
 
 If you are only interested in the current default version, you can use
@@ -149,9 +152,9 @@ the parameter `default_only`:
 ``` r
 uis_get_versions(default_only = TRUE)
 #> # A tibble: 1 × 4
-#>   version           publication_date    description                theme   
-#>   <chr>             <dttm>              <chr>                      <list>  
-#> 1 20251112-3e719d9a 2025-11-13 17:46:49 November 2025 SCCI Refresh <tibble>
+#>   version           publication_date    description theme           
+#>   <chr>             <dttm>              <chr>       <list>          
+#> 1 20260507-91260335 2026-05-08 16:58:36 string      <tibble [4 × 3]>
 ```
 
 The API will only return 100,000 records for each query, if more data is
@@ -165,12 +168,12 @@ uis_bulk_files()
 #> # A tibble: 12 × 3
 #>    file_name                                     file_url last_updated_descrip…¹
 #>    <chr>                                         <chr>    <chr>                 
-#>  1 "SDG 4 Education - Global and Thematic Indic… https:/… September 2025        
-#>  2 "Other Policy Relevant Indicators (OPRI)"     https:/… September 2025        
-#>  3 " SDG 9.5 - Research and Development (R&D)"   https:/… November 2025         
-#>  4 "Research and Development (R&D) – Other Poli… https:/… November 2025         
-#>  5 "SDG 11.4 Protect the Worlds Cultural and Na… https:/… November 2025         
-#>  6 "Demographic and Socio-economic Indicators"   https:/… September 2025        
+#>  1 "SDG 4 Education - Global and Thematic Indic… https:/… February 2026         
+#>  2 "Other Policy Relevant Indicators (OPRI)"     https:/… February 2026         
+#>  3 " SDG 9.5 - Research and Development (R&D)"   https:/… February 2026         
+#>  4 "Research and Development (R&D) – Other Poli… https:/… February 2026         
+#>  5 "SDG 11.4 Protect the Worlds Cultural and Na… https:/… February 2026         
+#>  6 "Demographic and Socio-economic Indicators"   https:/… February 2026         
 #>  7 "Education Non Core Archive February 2020"    https:/… <NA>                  
 #>  8 "Research and Development (R&D) Archive Marc… https:/… <NA>                  
 #>  9 "Innovation Archive April 2017"               https:/… <NA>                  

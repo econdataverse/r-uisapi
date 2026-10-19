@@ -9,10 +9,14 @@ import(cli)
 import(httr2)
 import(jsonlite)
 import(tibble)
-importFrom(dplyr,filter)
-importFrom(dplyr,mutate)
-importFrom(dplyr,rename)
-importFrom(dplyr,select)
+importFrom(dplyr,
+  filter,
+  mutate,
+  rename,
+  select
+)
 importFrom(rlang,.data)
-importFrom(tidyr,nest)
-importFrom(tidyr,unnest)
+importFrom(tidyr,
+  nest,
+  unnest
+)

@@ -92,7 +92,7 @@ uis_get <- function(
     cli::cli_inform(
       c("i" = "No records found for this query.")
     )
-    return(invisible(NULL))
+    invisible(NULL)
   } else {
     data <- records |>
       as_tibble() |>
@@ -102,6 +102,6 @@ uis_get <- function(
         "year",
         "value"
       )
-    return(data)
+    data
   }
 }
