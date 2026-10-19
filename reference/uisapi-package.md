@@ -9,13 +9,18 @@ science and technology, culture, and communication.
 
 Useful links:
 
-- <https://github.com/tidy-intelligence/r-uisapi>
+- <https://github.com/econdataverse/r-uisapi>
 
-- <https://tidy-intelligence.github.io/r-uisapi/>
+- <https://econdataverse.github.io/r-uisapi/>
 
-- Report bugs at <https://github.com/tidy-intelligence/r-uisapi/issues>
+- Report bugs at <https://github.com/econdataverse/r-uisapi/issues>
 
 ## Author
 
 **Maintainer**: Christoph Scheuch <christoph@tidy-intelligence.com>
 ([ORCID](https://orcid.org/0009-0004-0423-6819)) \[copyright holder\]
+
+Authors:
+
+- Christoph Scheuch <christoph@tidy-intelligence.com>
+  ([ORCID](https://orcid.org/0009-0004-0423-6819)) \[copyright holder\]

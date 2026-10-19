@@ -7,8 +7,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <title>Access the UNESCO Institute for Statistics API • uisapi</title>
 <script src="deps/jquery-3.6.0/jquery-3.6.0.min.js"></script><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<link href="deps/bootstrap-5.3.1/bootstrap.min.css" rel="stylesheet">
-<script src="deps/bootstrap-5.3.1/bootstrap.bundle.min.js"></script><link href="deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
+<link href="deps/bootstrap-5.3.8/bootstrap.min.css" rel="stylesheet">
+<script src="deps/bootstrap-5.3.8/bootstrap.bundle.min.js"></script><link href="deps/font-awesome-6.5.2/css/all.min.css" rel="stylesheet">
 <link href="deps/font-awesome-6.5.2/css/v4-shims.min.css" rel="stylesheet">
 <script src="deps/headroom-0.11.0/headroom.min.js"></script><script src="deps/headroom-0.11.0/jQuery.headroom.min.js"></script><script src="deps/bootstrap-toc-1.0.1/bootstrap-toc.min.js"></script><script src="deps/clipboard.js-2.0.11/clipboard.min.js"></script><script src="deps/search-1.0.0/autocomplete.jquery.min.js"></script><script src="deps/search-1.0.0/fuse.min.js"></script><script src="deps/search-1.0.0/mark.min.js"></script><!-- pkgdown --><script src="pkgdown.js"></script><meta property="og:title" content="Access the UNESCO Institute for Statistics API">
 <meta name="description" content="Retrieve data from the UNESCO Institute for Statistics (UIS) API &lt;https://api.uis.unesco.org/api/public/documentation/&gt;. UIS provides public access to more than 4,000 indicators focusing on education, science and technology, culture, and communication.">
@@ -22,7 +22,7 @@
 
     <a class="navbar-brand me-2" href="index.html">uisapi</a>
 
-    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.1.9000</small>
+    <small class="nav-text text-muted me-auto" data-bs-toggle="tooltip" data-bs-placement="bottom" title="">0.1.2</small>
 
 
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="Toggle navigation">
@@ -38,7 +38,7 @@
 <li class="nav-item"><form class="form-inline" role="search">
  <input class="form-control" type="search" name="search-input" id="search-input" autocomplete="off" aria-label="Search site" placeholder="Search for" data-search-index="search.json">
 </form></li>
-<li class="nav-item"><a class="external-link nav-link" href="https://github.com/tidy-intelligence/r-uisapi/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
+<li class="nav-item"><a class="external-link nav-link" href="https://github.com/econdataverse/r-uisapi/" aria-label="GitHub"><span class="fa fab fa-github fa-lg"></span></a></li>
       </ul>
 </div>
 
@@ -65,14 +65,14 @@
 <p>You can install the development version of <code>uisapi</code> from GitHub with:</p>
 <div class="sourceCode" id="cb2"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="co"># install.packages("pak")</span></span>
-<span><span class="fu">pak</span><span class="fu">::</span><span class="fu"><a href="https://pak.r-lib.org/reference/pak.html" class="external-link">pak</a></span><span class="op">(</span><span class="st">"tidy-intelligence/r-uisapi"</span><span class="op">)</span></span></code></pre></div>
+<span><span class="fu">pak</span><span class="fu">::</span><span class="fu"><a href="https://pak.r-lib.org/reference/pak.html" class="external-link">pak</a></span><span class="op">(</span><span class="st">"econdataverse/r-uisapi"</span><span class="op">)</span></span></code></pre></div>
 </div>
 <div class="section level2">
 <h2 id="usage">Usage<a class="anchor" aria-label="anchor" href="#usage"></a>
 </h2>
 <p>Load the package:</p>
 <div class="sourceCode" id="cb3"><pre class="downlit sourceCode r">
-<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/tidy-intelligence/r-uisapi" class="external-link">uisapi</a></span><span class="op">)</span></span></code></pre></div>
+<code class="sourceCode R"><span><span class="kw"><a href="https://rdrr.io/r/base/library.html" class="external-link">library</a></span><span class="op">(</span><span class="va"><a href="https://github.com/econdataverse/r-uisapi" class="external-link">uisapi</a></span><span class="op">)</span></span></code></pre></div>
 <p>To fetch indicators for specific entities, you can call:</p>
 <div class="sourceCode" id="cb4"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="reference/uis_get.html">uis_get</a></span><span class="op">(</span></span>
@@ -115,59 +115,62 @@
 <p>The list of available indicators can be retrieved via:</p>
 <div class="sourceCode" id="cb6"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="reference/uis_get_indicators.html">uis_get_indicators</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="co">#&gt; # A tibble: 4,636 × 7</span></span>
+<span><span class="co">#&gt; # A tibble: 5,063 × 7</span></span>
 <span><span class="co">#&gt;    indicator_id indicator_name     theme last_data_update last_data_update_des…¹</span></span>
 <span><span class="co">#&gt;    &lt;chr&gt;        &lt;chr&gt;              &lt;chr&gt; &lt;date&gt;           &lt;chr&gt;                 </span></span>
-<span><span class="co">#&gt;  1 10           Official entrance… EDUC… 2025-09-17       September 2025 Data R…</span></span>
-<span><span class="co">#&gt;  2 10403        Start month of th… EDUC… 2025-09-17       September 2025 Data R…</span></span>
-<span><span class="co">#&gt;  3 10404        End month of the … EDUC… 2025-09-17       September 2025 Data R…</span></span>
-<span><span class="co">#&gt;  4 10405        Start of the acad… EDUC… 2025-09-17       September 2025 Data R…</span></span>
-<span><span class="co">#&gt;  5 10406        End of the academ… EDUC… 2025-09-17       September 2025 Data R…</span></span>
-<span><span class="co">#&gt;  6 13           Theoretical durat… EDUC… 2025-09-17       September 2025 Data R…</span></span>
-<span><span class="co">#&gt;  7 200101       Total population … DEMO… 2025-09-09       September 2025 Data R…</span></span>
-<span><span class="co">#&gt;  8 200144       Population aged 1… DEMO… 2025-09-09       September 2025 Data R…</span></span>
-<span><span class="co">#&gt;  9 200151       Population aged 6… DEMO… 2025-09-09       September 2025 Data R…</span></span>
-<span><span class="co">#&gt; 10 200343       Population aged 1… DEMO… 2025-09-09       September 2025 Data R…</span></span>
-<span><span class="co">#&gt; # ℹ 4,626 more rows</span></span>
+<span><span class="co">#&gt;  1 10           Official entrance… EDUC… 2026-02-09       February 2026 Data Re…</span></span>
+<span><span class="co">#&gt;  2 10403        Start month of th… EDUC… 2026-02-09       February 2026 Data Re…</span></span>
+<span><span class="co">#&gt;  3 10404        End month of the … EDUC… 2026-02-09       February 2026 Data Re…</span></span>
+<span><span class="co">#&gt;  4 10405        Start of the acad… EDUC… 2026-02-09       February 2026 Data Re…</span></span>
+<span><span class="co">#&gt;  5 10406        End of the academ… EDUC… 2026-02-09       February 2026 Data Re…</span></span>
+<span><span class="co">#&gt;  6 13           Theoretical durat… EDUC… 2026-02-09       February 2026 Data Re…</span></span>
+<span><span class="co">#&gt;  7 200101       Total population … DEMO… 2026-02-09       February 2026 Data Re…</span></span>
+<span><span class="co">#&gt;  8 200144       Population aged 1… DEMO… 2026-02-09       February 2026 Data Re…</span></span>
+<span><span class="co">#&gt;  9 200151       Population aged 6… DEMO… 2026-02-09       February 2026 Data Re…</span></span>
+<span><span class="co">#&gt; 10 200343       Population aged 1… DEMO… 2026-02-09       February 2026 Data Re…</span></span>
+<span><span class="co">#&gt; # ℹ 5,053 more rows</span></span>
 <span><span class="co">#&gt; # ℹ abbreviated name: ¹​last_data_update_description</span></span>
 <span><span class="co">#&gt; # ℹ 2 more variables: data_availability &lt;list&gt;, entity_types &lt;list&gt;</span></span></code></pre></div>
 <p>The API supports versioning and you can retrieve all versions using:</p>
 <div class="sourceCode" id="cb7"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="reference/uis_get_versions.html">uis_get_versions</a></span><span class="op">(</span><span class="op">)</span></span>
-<span><span class="co">#&gt; # A tibble: 12 × 4</span></span>
+<span><span class="co">#&gt; # A tibble: 15 × 4</span></span>
 <span><span class="co">#&gt;    version           publication_date    description                    theme   </span></span>
 <span><span class="co">#&gt;    &lt;chr&gt;             &lt;dttm&gt;              &lt;chr&gt;                          &lt;list&gt;  </span></span>
-<span><span class="co">#&gt;  1 20251112-3e719d9a 2025-11-13 17:46:49 November 2025 SCCI Refresh     &lt;tibble&gt;</span></span>
-<span><span class="co">#&gt;  2 20250917-73f4b95c 2025-09-18 13:31:02 September 2025 Data Release    &lt;tibble&gt;</span></span>
-<span><span class="co">#&gt;  3 20250910-c4a5b1fe 2025-09-12 02:55:22 September 2025 release         &lt;tibble&gt;</span></span>
-<span><span class="co">#&gt;  4 20250416-f6707727 2025-04-16 14:45:45 Dropping data for Hong Kong c… &lt;tibble&gt;</span></span>
-<span><span class="co">#&gt;  5 20250325-6f032139 2025-03-25 23:19:35 Dropping indicators with valu… &lt;tibble&gt;</span></span>
-<span><span class="co">#&gt;  6 20250312-e714f4e9 2025-03-12 14:01:51 Dropping Moldova 2024 populat… &lt;tibble&gt;</span></span>
-<span><span class="co">#&gt;  7 20250225-2ae60fad 2025-02-27 15:29:19 February 2025 DR               &lt;tibble&gt;</span></span>
-<span><span class="co">#&gt;  8 20241121-61101499 2024-11-21 23:37:39 SCCI Data refresh – Nov 2024 … &lt;tibble&gt;</span></span>
-<span><span class="co">#&gt;  9 20241113-98786d81 2024-11-21 18:57:35 SCCI data refresh              &lt;tibble&gt;</span></span>
-<span><span class="co">#&gt; 10 20241030-9d4d089e 2024-10-30 17:28:00 Drop data for CIV on MYS for … &lt;tibble&gt;</span></span>
-<span><span class="co">#&gt; 11 20240913-b8ca1963 2024-09-15 14:44:07 Glossary Update                &lt;tibble&gt;</span></span>
-<span><span class="co">#&gt; 12 20240910-b5ad4d82 2024-09-11 06:15:13 September 2024 Data Release (… &lt;tibble&gt;</span></span></code></pre></div>
+<span><span class="co">#&gt;  1 20260507-91260335 2026-05-08 16:58:36 string                         &lt;tibble&gt;</span></span>
+<span><span class="co">#&gt;  2 20260311-78618c3e 2026-03-11 19:40:01 Updated release files with fi… &lt;tibble&gt;</span></span>
+<span><span class="co">#&gt;  3 20260224-aef8b145 2026-02-26 17:19:14 string                         &lt;tibble&gt;</span></span>
+<span><span class="co">#&gt;  4 20251112-3e719d9a 2025-11-13 17:46:49 November 2025 SCCI Refresh     &lt;tibble&gt;</span></span>
+<span><span class="co">#&gt;  5 20250917-73f4b95c 2025-09-18 13:31:02 September 2025 Data Release    &lt;tibble&gt;</span></span>
+<span><span class="co">#&gt;  6 20250910-c4a5b1fe 2025-09-12 02:55:22 September 2025 release         &lt;tibble&gt;</span></span>
+<span><span class="co">#&gt;  7 20250416-f6707727 2025-04-16 14:45:45 Dropping data for Hong Kong c… &lt;tibble&gt;</span></span>
+<span><span class="co">#&gt;  8 20250325-6f032139 2025-03-25 23:19:35 Dropping indicators with valu… &lt;tibble&gt;</span></span>
+<span><span class="co">#&gt;  9 20250312-e714f4e9 2025-03-12 14:01:51 Dropping Moldova 2024 populat… &lt;tibble&gt;</span></span>
+<span><span class="co">#&gt; 10 20250225-2ae60fad 2025-02-27 15:29:19 February 2025 DR               &lt;tibble&gt;</span></span>
+<span><span class="co">#&gt; 11 20241121-61101499 2024-11-21 23:37:39 SCCI Data refresh – Nov 2024 … &lt;tibble&gt;</span></span>
+<span><span class="co">#&gt; 12 20241113-98786d81 2024-11-21 18:57:35 SCCI data refresh              &lt;tibble&gt;</span></span>
+<span><span class="co">#&gt; 13 20241030-9d4d089e 2024-10-30 17:28:00 Drop data for CIV on MYS for … &lt;tibble&gt;</span></span>
+<span><span class="co">#&gt; 14 20240913-b8ca1963 2024-09-15 14:44:07 Glossary Update                &lt;tibble&gt;</span></span>
+<span><span class="co">#&gt; 15 20240910-b5ad4d82 2024-09-11 06:15:13 September 2024 Data Release (… &lt;tibble&gt;</span></span></code></pre></div>
 <p>If you are only interested in the current default version, you can use the parameter <code>default_only</code>:</p>
 <div class="sourceCode" id="cb8"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="reference/uis_get_versions.html">uis_get_versions</a></span><span class="op">(</span>default_only <span class="op">=</span> <span class="cn">TRUE</span><span class="op">)</span></span>
 <span><span class="co">#&gt; # A tibble: 1 × 4</span></span>
-<span><span class="co">#&gt;   version           publication_date    description                theme   </span></span>
-<span><span class="co">#&gt;   &lt;chr&gt;             &lt;dttm&gt;              &lt;chr&gt;                      &lt;list&gt;  </span></span>
-<span><span class="co">#&gt; 1 20251112-3e719d9a 2025-11-13 17:46:49 November 2025 SCCI Refresh &lt;tibble&gt;</span></span></code></pre></div>
+<span><span class="co">#&gt;   version           publication_date    description theme           </span></span>
+<span><span class="co">#&gt;   &lt;chr&gt;             &lt;dttm&gt;              &lt;chr&gt;       &lt;list&gt;          </span></span>
+<span><span class="co">#&gt; 1 20260507-91260335 2026-05-08 16:58:36 string      &lt;tibble [4 × 3]&gt;</span></span></code></pre></div>
 <p>The API will only return 100,000 records for each query, if more data is requested, the API call with fail with a 400 http status code. If you need more data, then UIS recommends using the <a href="https://databrowser.uis.unesco.org/resources/bulk" class="external-link">Bulk Data Download Service (BDDS)</a>. You can get a list of available files via:</p>
 <div class="sourceCode" id="cb9"><pre class="downlit sourceCode r">
 <code class="sourceCode R"><span><span class="fu"><a href="reference/uis_bulk_files.html">uis_bulk_files</a></span><span class="op">(</span><span class="op">)</span></span>
 <span><span class="co">#&gt; # A tibble: 12 × 3</span></span>
 <span><span class="co">#&gt;    file_name                                     file_url last_updated_descrip…¹</span></span>
 <span><span class="co">#&gt;    &lt;chr&gt;                                         &lt;chr&gt;    &lt;chr&gt;                 </span></span>
-<span><span class="co">#&gt;  1 "SDG 4 Education - Global and Thematic Indic… https:/… September 2025        </span></span>
-<span><span class="co">#&gt;  2 "Other Policy Relevant Indicators (OPRI)"     https:/… September 2025        </span></span>
-<span><span class="co">#&gt;  3 " SDG 9.5 - Research and Development (R&amp;D)"   https:/… November 2025         </span></span>
-<span><span class="co">#&gt;  4 "Research and Development (R&amp;D) – Other Poli… https:/… November 2025         </span></span>
-<span><span class="co">#&gt;  5 "SDG 11.4 Protect the Worlds Cultural and Na… https:/… November 2025         </span></span>
-<span><span class="co">#&gt;  6 "Demographic and Socio-economic Indicators"   https:/… September 2025        </span></span>
+<span><span class="co">#&gt;  1 "SDG 4 Education - Global and Thematic Indic… https:/… February 2026         </span></span>
+<span><span class="co">#&gt;  2 "Other Policy Relevant Indicators (OPRI)"     https:/… February 2026         </span></span>
+<span><span class="co">#&gt;  3 " SDG 9.5 - Research and Development (R&amp;D)"   https:/… February 2026         </span></span>
+<span><span class="co">#&gt;  4 "Research and Development (R&amp;D) – Other Poli… https:/… February 2026         </span></span>
+<span><span class="co">#&gt;  5 "SDG 11.4 Protect the Worlds Cultural and Na… https:/… February 2026         </span></span>
+<span><span class="co">#&gt;  6 "Demographic and Socio-economic Indicators"   https:/… February 2026         </span></span>
 <span><span class="co">#&gt;  7 "Education Non Core Archive February 2020"    https:/… &lt;NA&gt;                  </span></span>
 <span><span class="co">#&gt;  8 "Research and Development (R&amp;D) Archive Marc… https:/… &lt;NA&gt;                  </span></span>
 <span><span class="co">#&gt;  9 "Innovation Archive April 2017"               https:/… &lt;NA&gt;                  </span></span>
@@ -208,8 +211,8 @@
 <h2 data-toc-skip>Links</h2>
 <ul class="list-unstyled">
 <li><a href="https://cloud.r-project.org/package=uisapi" class="external-link">View on CRAN</a></li>
-<li><a href="https://github.com/tidy-intelligence/r-uisapi/" class="external-link">Browse source code</a></li>
-<li><a href="https://github.com/tidy-intelligence/r-uisapi/issues" class="external-link">Report a bug</a></li>
+<li><a href="https://github.com/econdataverse/r-uisapi/" class="external-link">Browse source code</a></li>
+<li><a href="https://github.com/econdataverse/r-uisapi/issues" class="external-link">Report a bug</a></li>
 </ul>
 </div>
 
@@ -241,7 +244,7 @@
 <ul class="list-unstyled">
 <li><a href="https://cran.r-project.org/package=uisapi" class="external-link"><img src="https://www.r-pkg.org/badges/version/uisapi" alt="CRAN status"></a></li>
 <li><a href="https://cran.r-project.org/package=uisapi" class="external-link"><img src="https://cranlogs.r-pkg.org/badges/uisapi" alt="CRAN downloads"></a></li>
-<li><a href="https://app.codecov.io/gh/tidy-intelligence/r-uisapi" class="external-link"><img src="https://codecov.io/gh/tidy-intelligence/r-uisapi/graph/badge.svg" alt="Codecov test coverage"></a></li>
+<li><a href="https://app.codecov.io/gh/econdataverse/r-uisapi" class="external-link"><img src="https://codecov.io/gh/econdataverse/r-uisapi/graph/badge.svg" alt="Codecov test coverage"></a></li>
 </ul>
 </div>
 
@@ -254,7 +257,7 @@
 </div>
 
 <div class="pkgdown-footer-right">
-  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.0.</p>
+  <p>Site built with <a href="https://pkgdown.r-lib.org/" class="external-link">pkgdown</a> 2.2.1.</p>
 </div>
 
     </footer>

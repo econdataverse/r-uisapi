@@ -22,14 +22,14 @@ uis_get(
   Character vector. The entity IDs (ISO 3166-1 alpha-3 codes) to
   retrieve data for. Must provide either this parameter or `indicators`
   or both. See
-  [uis_get_entities](https://tidy-intelligence.github.io/r-uisapi/reference/uis_get_entities.md)
+  [uis_get_entities](https://econdataverse.github.io/r-uisapi/reference/uis_get_entities.md)
   for a list of supported entities.
 
 - indicators:
 
   Character vector. The indicator IDs to retrieve data for. Must provide
   either this parameter or `entities` or both. See
-  [uis_get_indicators](https://tidy-intelligence.github.io/r-uisapi/reference/uis_get_indicators.md)
+  [uis_get_indicators](https://econdataverse.github.io/r-uisapi/reference/uis_get_indicators.md)
   for a list of supported indicators.
 
 - start_year:
@@ -46,7 +46,7 @@ uis_get(
 
   Character. The API version to use. If NULL, the default version is
   used. See
-  [uis_get_versions](https://tidy-intelligence.github.io/r-uisapi/reference/uis_get_versions.md)
+  [uis_get_versions](https://econdataverse.github.io/r-uisapi/reference/uis_get_versions.md)
   for a list of supported versions.
 
 ## Value
@@ -77,26 +77,26 @@ A data frame with the following columns:
 uis_get(
   indicators = "CR.1"
 )
-#> # A tibble: 2,163 × 4
+#> # A tibble: 2,568 × 4
 #>    entity_id indicator_id  year value
 #>    <chr>     <chr>        <int> <dbl>
 #>  1 AFG       CR.1          2011  40.7
 #>  2 AFG       CR.1          2015  54.5
 #>  3 AFG       CR.1          2022  44.2
 #>  4 AGO       CR.1          2015  60.0
-#>  5 ALB       CR.1          2000  95.2
-#>  6 ALB       CR.1          2005  98.9
-#>  7 ALB       CR.1          2009  98.2
-#>  8 ALB       CR.1          2017  97.4
-#>  9 ARG       CR.1          2000  95.5
-#> 10 ARG       CR.1          2001  95.6
-#> # ℹ 2,153 more rows
+#>  5 AGO       CR.1          2023  55.3
+#>  6 ALB       CR.1          2000  95.2
+#>  7 ALB       CR.1          2005  98.9
+#>  8 ALB       CR.1          2009  98.2
+#>  9 ALB       CR.1          2017  95.4
+#> 10 ARG       CR.1          2010  92.7
+#> # ℹ 2,558 more rows
 
 # Get all data for a single country
 uis_get(
   entities = "BRA"
 )
-#> # A tibble: 48,310 × 4
+#> # A tibble: 50,331 × 4
 #>    entity_id indicator_id  year value
 #>    <chr>     <chr>        <int> <dbl>
 #>  1 BRA       10            1999     0
@@ -109,14 +109,14 @@ uis_get(
 #>  8 BRA       10            2006     0
 #>  9 BRA       10            2007     0
 #> 10 BRA       10            2008     0
-#> # ℹ 48,300 more rows
+#> # ℹ 50,321 more rows
 
 # Get data for multiple indicators and countries
 uis_get(
   entities = c("BRA", "USA"),
   indicators = c("CR.1", "CR.2")
 )
-#> # A tibble: 66 × 4
+#> # A tibble: 70 × 4
 #>    entity_id indicator_id  year value
 #>    <chr>     <chr>        <int> <dbl>
 #>  1 BRA       CR.1          2001  82  
@@ -129,7 +129,7 @@ uis_get(
 #>  8 BRA       CR.1          2008  88.4
 #>  9 BRA       CR.1          2009  88.6
 #> 10 BRA       CR.1          2011  89.9
-#> # ℹ 56 more rows
+#> # ℹ 60 more rows
 
 # Get data for multiple indicators and countries and specific time range
 uis_get(

@@ -15,7 +15,7 @@ uis_get_entities(version = NULL)
 
   Character. The API version to use. If NULL (default), the API's
   default version will be used. See
-  [uis_get_versions](https://tidy-intelligence.github.io/r-uisapi/reference/uis_get_versions.md)
+  [uis_get_versions](https://econdataverse.github.io/r-uisapi/reference/uis_get_versions.md)
   for a list of supported versions.
 
 ## Value

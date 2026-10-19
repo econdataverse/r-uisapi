@@ -34,12 +34,12 @@ uis_bulk_files()
 #> # A tibble: 12 × 3
 #>    file_name                                     file_url last_updated_descrip…¹
 #>    <chr>                                         <chr>    <chr>                 
-#>  1 "SDG 4 Education - Global and Thematic Indic… https:/… September 2025        
-#>  2 "Other Policy Relevant Indicators (OPRI)"     https:/… September 2025        
-#>  3 " SDG 9.5 - Research and Development (R&D)"   https:/… November 2025         
-#>  4 "Research and Development (R&D) – Other Poli… https:/… November 2025         
-#>  5 "SDG 11.4 Protect the Worlds Cultural and Na… https:/… November 2025         
-#>  6 "Demographic and Socio-economic Indicators"   https:/… September 2025        
+#>  1 "SDG 4 Education - Global and Thematic Indic… https:/… February 2026         
+#>  2 "Other Policy Relevant Indicators (OPRI)"     https:/… February 2026         
+#>  3 " SDG 9.5 - Research and Development (R&D)"   https:/… February 2026         
+#>  4 "Research and Development (R&D) – Other Poli… https:/… February 2026         
+#>  5 "SDG 11.4 Protect the Worlds Cultural and Na… https:/… February 2026         
+#>  6 "Demographic and Socio-economic Indicators"   https:/… February 2026         
 #>  7 "Education Non Core Archive February 2020"    https:/… NA                    
 #>  8 "Research and Development (R&D) Archive Marc… https:/… NA                    
 #>  9 "Innovation Archive April 2017"               https:/… NA                    
